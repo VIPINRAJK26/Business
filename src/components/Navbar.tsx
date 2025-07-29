@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ShoppingBag } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Search, Menu, X, ShoppingBag, ShoppingCart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
@@ -52,8 +54,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Search & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          {/* Search, Cart & Mobile Menu */}
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Button
               variant="ghost"
               size="icon"
@@ -61,6 +63,28 @@ const Navbar = () => {
               className="hover-lift"
             >
               <Search className="w-5 h-5" />
+            </Button>
+
+            {/* Cart Button */}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => navigate('/cart')}
+              className="relative hover-lift"
+            >
+              <ShoppingCart className="w-5 h-5" />
+              <Badge className="absolute -top-1 -right-1 px-1 min-w-[16px] h-4 flex items-center justify-center text-xs">
+                3
+              </Badge>
+            </Button>
+
+            {/* User Button - Hidden on Mobile */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden sm:flex hover-lift"
+            >
+              <User className="w-5 h-5" />
             </Button>
 
             {/* Mobile Menu Button */}
