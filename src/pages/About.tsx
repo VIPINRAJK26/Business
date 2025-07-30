@@ -77,18 +77,18 @@ const About = () => {
               </h1>
               
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Founded in 2018, CraftCorner began as a small passion project to connect 
+                Founded in 2023, CraftCorner began as a small passion project to connect 
                 unique handmade crafts with people who appreciate authentic artistry. Today, 
                 we're proud to be a thriving community of creators and collectors.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">2018</div>
+                  <div className="text-3xl font-bold text-primary mb-2">2023</div>
                   <p className="text-muted-foreground">Founded</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">2,000+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">1,000+</div>
                   <p className="text-muted-foreground">Happy Customers</p>
                 </div>
                 <div className="text-center">
@@ -138,7 +138,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 bg-muted/30">
+        {/* <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="font-playfair text-4xl font-bold text-primary mb-4">
@@ -171,7 +171,7 @@ const About = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Mission Section */}
         <section className="py-20">

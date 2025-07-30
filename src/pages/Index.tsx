@@ -10,33 +10,44 @@ import { Link } from 'react-router-dom';
 const Index = () => {
   const featuredProducts = [
     {
-      id: '1',
-      name: 'Vintage Hot Wheels Redline Collection',
+      id: "1",
+      name: "Vintage Hot Wheels Redline Collection",
       price: 89.99,
-      originalPrice: 120.00,
-      image: '🏎️',
-      category: 'Hot Wheels',
+      originalPrice: 120.0,
+      image: "/car.jpg",
+      category: "Hot Wheels",
       rating: 4.8,
       reviews: 24,
       isFeatured: true,
     },
     {
-      id: '2',
-      name: 'Handwoven Ceramic Vase',
+      id: "2",
+      name: "Handwoven Ceramic Vase",
       price: 45.99,
-      image: '🏺',
-      category: 'Handmade Crafts',
+      image: "/hand-craft.jpg",
+      category: "Handmade Crafts",
       rating: 4.9,
       reviews: 18,
       isNew: true,
     },
     {
-      id: '3',
-      name: 'Custom Painted Miniature Set',
-      price: 67.50,
-      originalPrice: 85.00,
-      image: '🎨',
-      category: 'Collectibles',
+      id: "3",
+      name: "Custom Painted Miniature Set",
+      price: 67.5,
+      originalPrice: 85.0,
+      image: "/resin1.jpg",
+      category: "Collectibles",
+      rating: 4.7,
+      reviews: 31,
+      isFeatured: true,
+    },
+    {
+      id: "4",
+      name: "Custom Painted Miniature Set",
+      price: 67.5,
+      originalPrice: 85.0,
+      image: "/collectibles1.jpg",
+      category: "Collectibles",
       rating: 4.7,
       reviews: 31,
       isFeatured: true,
@@ -69,17 +80,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <main>
         {/* Hero Section */}
         <Hero />
 
         {/* Features Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20 bg-muted/30 ">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
-                <div 
+                <div
                   key={feature.title}
                   className="text-center group animate-fade-in"
                   style={{ animationDelay: `${index * 200}ms` }}
@@ -90,9 +101,7 @@ const Index = () => {
                   <h3 className="font-playfair font-semibold text-lg mb-2 text-primary">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground">
-                    {feature.description}
-                  </p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -111,12 +120,12 @@ const Index = () => {
                 <span className="text-accent"> Treasures</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Discover our most loved items, carefully curated for their exceptional 
-                quality and unique character.
+                Discover our most loved items, carefully curated for their
+                exceptional quality and unique character.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               {featuredProducts.map((product, index) => (
                 <div
                   key={product.id}
@@ -127,7 +136,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="text-center">
               <Button asChild size="lg" className="hover-lift hover-glow">
                 <Link to="/products">
@@ -147,18 +156,21 @@ const Index = () => {
                 Shop by Category
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                From vintage collectibles to contemporary crafts, find exactly what speaks to you.
+                From vintage collectibles to contemporary crafts, find exactly
+                what speaks to you.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Link to="/products" className="group block">
                 <Card className="border-0 shadow-soft hover-lift overflow-hidden bg-gradient-card">
                   <CardContent className="p-0">
                     <div className="aspect-[4/3] bg-gradient-to-br from-accent/20 to-accent/30 flex items-center justify-center">
-                      <span className="text-8xl group-hover:scale-110 transition-transform duration-300">
-                        🏺
-                      </span>
+                      <img
+                        src="/handmade.jpg"
+                        alt=""
+                        className="aspect-[4/3]"
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="font-playfair font-bold text-2xl mb-2 text-primary group-hover:text-accent transition-colors duration-300">
@@ -171,14 +183,16 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </Link>
-              
+
               <Link to="/products" className="group block">
                 <Card className="border-0 shadow-soft hover-lift overflow-hidden bg-gradient-card">
                   <CardContent className="p-0">
                     <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-primary/30 flex items-center justify-center">
-                      <span className="text-8xl group-hover:scale-110 transition-transform duration-300">
-                        🏎️
-                      </span>
+                      <img
+                        src="/hot-wheels.jpg"
+                        alt=""
+                        className="aspect-[4/3]"
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="font-playfair font-bold text-2xl mb-2 text-primary group-hover:text-accent transition-colors duration-300">
@@ -191,14 +205,16 @@ const Index = () => {
                   </CardContent>
                 </Card>
               </Link>
-              
+
               <Link to="/products" className="group block">
                 <Card className="border-0 shadow-soft hover-lift overflow-hidden bg-gradient-card">
                   <CardContent className="p-0">
                     <div className="aspect-[4/3] bg-gradient-to-br from-muted/40 to-muted/60 flex items-center justify-center">
-                      <span className="text-8xl group-hover:scale-110 transition-transform duration-300">
-                        🎨
-                      </span>
+                      <img
+                        src="/collectibles.jpg"
+                        alt=""
+                        className="aspect-[4/3]"
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="font-playfair font-bold text-2xl mb-2 text-primary group-hover:text-accent transition-colors duration-300">
@@ -223,29 +239,33 @@ const Index = () => {
                 What Our Customers Say
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Join thousands of happy customers who've found their perfect treasures with us.
+                Join thousands of happy customers who've found their perfect
+                treasures with us.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Sarah M.',
-                  comment: 'Amazing quality and unique pieces! The Hot Wheels collection is authentic and beautifully packaged.',
+                  name: "Vipin",
+                  comment:
+                    "Amazing quality and unique pieces! The Hot Wheels collection is authentic and beautifully packaged.",
                   rating: 5,
                 },
                 {
-                  name: 'David L.',
-                  comment: 'Love the handmade crafts. Each piece has so much character and the craftsmanship is exceptional.',
+                  name: "Navya",
+                  comment:
+                    "Love the handmade crafts. Each piece has so much character and the craftsmanship is exceptional.",
                   rating: 5,
                 },
                 {
-                  name: 'Emily R.',
-                  comment: 'Fast shipping and excellent customer service. Found some rare collectibles I\'ve been searching for!',
+                  name: "Nidhin",
+                  comment:
+                    "Fast shipping and excellent customer service. Found some rare collectibles I've been searching for!",
                   rating: 5,
                 },
               ].map((review, index) => (
-                <Card 
+                <Card
                   key={review.name}
                   className="border-0 shadow-soft hover-lift bg-gradient-card"
                   style={{ animationDelay: `${index * 200}ms` }}
@@ -253,15 +273,16 @@ const Index = () => {
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-accent text-accent"
+                        />
                       ))}
                     </div>
                     <p className="text-muted-foreground italic mb-4">
                       "{review.comment}"
                     </p>
-                    <p className="font-semibold text-primary">
-                      {review.name}
-                    </p>
+                    <p className="font-semibold text-primary">{review.name}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -12,13 +12,13 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left animate-fade-in">
+          <div className="text-center lg:text-left animate-fade-in pt-24">
             <div className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4" />
               <span>Handcrafted with Love</span>
             </div>
             
-            <h1 className="font-playfair text-5xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+            <h1 className="font-playfair text-4xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
               Unique 
               <span className="text-accent"> Crafts</span>
               <br />
@@ -79,14 +79,14 @@ const Hero = () => {
               
               {/* Floating Cards */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-4 w-64">
-                  <div className="bg-card p-4 rounded-2xl shadow-soft hover-lift border border-border/50">
+                <div className="grid grid-cols-2 gap-4 w-96">
+                  {/* <div className="bg-card p-4 rounded-2xl shadow-soft hover-lift border border-border/50">
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
                       <span className="text-2xl">🏺</span>
                     </div>
                     <h3 className="font-semibold text-sm">Handmade Pottery</h3>
                     <p className="text-xs text-muted-foreground">Unique ceramic pieces</p>
-                  </div>
+                  </div> */}
                   
                   <div className="bg-card p-4 rounded-2xl shadow-soft hover-lift border border-border/50 mt-8">
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
@@ -96,11 +96,11 @@ const Hero = () => {
                     <p className="text-xs text-muted-foreground">Collectible cars</p>
                   </div>
                   
-                  <div className="bg-card p-4 rounded-2xl shadow-soft hover-lift border border-border/50 -mt-4">
+                  <div className="relative top-28  bg-card p-4 rounded-2xl shadow-soft hover-lift border border-border/50 -mt-4">
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-3">
                       <span className="text-2xl">🎨</span>
                     </div>
-                    <h3 className="font-semibold text-sm">Art & Crafts</h3>
+                    <h3 className="font-semibold text-sm">Resin Art & Crafts</h3>
                     <p className="text-xs text-muted-foreground">Custom artwork</p>
                   </div>
                   
