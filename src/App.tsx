@@ -11,11 +11,13 @@ import Cart from "./pages/Cart";
 import BuyNow from "./pages/BuyNow";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "./components/ui/whatsapp";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <WhatsAppButton />
     <TooltipProvider>
       <Toaster />
       <Sonner />

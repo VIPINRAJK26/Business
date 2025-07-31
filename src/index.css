@@ -10,6 +10,19 @@
   display: none;
 }
 
+.trapezoid-img {
+  transform: skewX(-10deg);
+  overflow: hidden;
+}
+.trapezoid-img img {
+  transform: skewX(10deg); /* Unskew image content inside */
+}
+
+
+.clip-trapezoid {
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
 @layer base {
   :root {
     /* Light Theme - Premium White */

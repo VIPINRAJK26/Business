@@ -66,17 +66,17 @@ const ProductCard = ({
           </div>
 
           {/* Badges */}
-          <div className="absolute top-3 left-3 flex flex-col gap-2">
+          {/* <div className="absolute top-3 left-3 flex flex-col gap-2">
             {isNew && (
-              <Badge className="bg-accent text-accent-foreground">New</Badge>
+              <Badge className="bg-accent text-xs text-accent-foreground">New</Badge>
             )}
             {isFeatured && (
-              <Badge className="bg-primary text-primary-foreground">
+              <Badge className="bg-primary text-xs text-primary-foreground">
                 Featured
               </Badge>
             )}
             {discount > 0 && <Badge variant="destructive">-{discount}%</Badge>}
-          </div>
+          </div> */}
 
           {/* Wishlist Button */}
           <Button
@@ -131,7 +131,7 @@ const ProductCard = ({
           </p>
 
           {/* Product Name */}
-          <h3 className="font-playfair font-semibold text-base sm:text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-300">
+          <h3 className="font-playfair font-semibold text-xs sm:text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-300">
             {name}
           </h3>
 
@@ -154,7 +154,7 @@ const ProductCard = ({
 
           {/* Price */}
           <div className="flex items-center space-x-2">
-            <span className="font-bold text-base sm:text-lg text-primary">
+            <span className="font-bold  text-xs sm:text-lg text-primary">
               ₹{price}
             </span>
             {originalPrice && (

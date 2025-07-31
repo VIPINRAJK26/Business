@@ -16,30 +16,36 @@ const ProductDetail = () => {
 
   // Mock product data - in real app, fetch by ID
   const product = {
-    id: '1',
-    name: 'Vintage Hot Wheels Redline Collection',
+    id: "1",
+    name: "Vintage Hot Wheels Redline Collection",
     price: 89.99,
-    originalPrice: 120.00,
-    images: ['🏎️', '🚗', '🏁', '🎯'],
-    category: 'Hot Wheels',
+    originalPrice: 120.0,
+    images: [
+      "/collectibles1.jpg",
+      "/collectibles1.jpg",
+      "/collectibles1.jpg",
+      "/collectibles1.jpg",
+    ],
+    category: "Hot Wheels",
     rating: 4.8,
     reviews: 24,
     inStock: 12,
-    description: 'A rare collection of vintage Hot Wheels Redline cars from the 1970s. These iconic die-cast vehicles feature the distinctive red stripe on the tires and are highly sought after by collectors worldwide.',
+    description:
+      "A rare collection of vintage Hot Wheels Redline cars from the 1970s. These iconic die-cast vehicles feature the distinctive red stripe on the tires and are highly sought after by collectors worldwide.",
     features: [
-      'Authentic 1970s Redline series',
-      'Original packaging included',
-      'Mint condition',
-      'Certificate of authenticity',
-      'Perfect for collectors'
+      "Authentic 1970s Redline series",
+      "Original packaging included",
+      "Mint condition",
+      "Certificate of authenticity",
+      "Perfect for collectors",
     ],
     specifications: {
-      'Brand': 'Hot Wheels',
-      'Year': '1970s',
-      'Scale': '1:64',
-      'Material': 'Die-cast metal',
-      'Condition': 'Mint'
-    }
+      Brand: "Hot Wheels",
+      Year: "1970s",
+      Scale: "1:64",
+      Material: "Die-cast metal",
+      Condition: "Mint",
+    },
   };
 
   const addToCart = () => {
@@ -76,7 +82,7 @@ const ProductDetail = () => {
             {/* Product Images */}
             <div className="space-y-4">
               <div className="aspect-square bg-muted/20 rounded-2xl flex items-center justify-center text-8xl border border-border/50">
-                {product.images[0]}
+                <img src={product.images[0]}  alt="" />
               </div>
               <div className="grid grid-cols-4 gap-2">
                 {product.images.map((image, index) => (
@@ -84,7 +90,7 @@ const ProductDetail = () => {
                     key={index}
                     className="aspect-square bg-muted/20 rounded-lg flex items-center justify-center text-2xl sm:text-3xl border border-border/50 cursor-pointer hover:border-primary/50 transition-colors"
                   >
-                    {image}
+                    <img src={image} alt="" />
                   </div>
                 ))}
               </div>

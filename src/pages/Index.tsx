@@ -11,7 +11,7 @@ const Index = () => {
   const featuredProducts = [
     {
       id: "1",
-      name: "Vintage Hot Wheels Redline Collection",
+      name: "Vintage Hot Wheels  ",
       price: 89.99,
       originalPrice: 120.0,
       image: "/car.jpg",
@@ -86,46 +86,25 @@ const Index = () => {
         <Hero />
 
         {/* Features Section */}
-        <section className="py-20 bg-muted/30 ">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={feature.title}
-                  className="text-center group animate-fade-in"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-all duration-300 hover-lift">
-                    <feature.icon className="w-8 h-8 text-accent" />
-                  </div>
-                  <h3 className="font-playfair font-semibold text-lg mb-2 text-primary">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Featured Products */}
         <section className="py-20">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-2 ">
             <div className="text-center mb-16">
               <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
                 Featured Collection
               </Badge>
-              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-4">
                 Handpicked
                 <span className="text-accent"> Treasures</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-md text-muted-foreground max-w-2xl mx-auto">
                 Discover our most loved items, carefully curated for their
                 exceptional quality and unique character.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-2  lg:grid-cols-4 gap-2 mb-12">
               {featuredProducts.map((product, index) => (
                 <div
                   key={product.id}
@@ -150,7 +129,7 @@ const Index = () => {
 
         {/* Categories Showcase */}
         <section className="py-20 bg-gradient-to-br from-background via-muted/10 to-background">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Shop by Category
@@ -231,9 +210,31 @@ const Index = () => {
           </div>
         </section>
 
+        <section className="py-20 bg-muted/30 ">
+          <div className="container mx-auto px-1 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <div
+                  key={feature.title}
+                  className="text-center group animate-fade-in"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-all duration-300 hover-lift">
+                    <feature.icon className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="font-playfair font-semibold text-lg mb-2 text-primary">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Customer Reviews */}
         <section className="py-20">
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
                 What Our Customers Say
