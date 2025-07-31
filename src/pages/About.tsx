@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Heart, Award, Users, Truck, Shield, Recycle } from 'lucide-react';
@@ -60,7 +59,6 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <main className="pt-20">
         {/* Hero Section */}

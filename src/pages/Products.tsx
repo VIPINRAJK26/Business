@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Navbar from '@/components/Navbar';
 import ProductCard from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -123,7 +122,6 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <main className="pt-20">
         {/* Header */}

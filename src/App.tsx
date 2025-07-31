@@ -9,9 +9,12 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import BuyNow from "./pages/BuyNow";
+import OrderPage from "./pages/Orders";
+import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/ui/whatsapp";
+import Wishlist from "./pages/WishList";
 import { MobileNavbar } from "./components/BottomNav";
 import "./index.css";
 
@@ -24,6 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
@@ -32,6 +36,8 @@ const App = () => (
           <Route path="/cart" element={<Cart />} />
           <Route path="/buy-now" element={<BuyNow />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/orders" element={<OrderPage />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <MobileNavbar />

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
@@ -62,7 +61,6 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       
       <main className="pt-16">
         {/* Mobile-first layout */}
