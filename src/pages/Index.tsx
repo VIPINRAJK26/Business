@@ -122,7 +122,6 @@ const Index = () => {
   };
   return (
     <div className="min-h-screen bg-background">
-
       <main>
         {/* Hero Section */}
         <Hero />
@@ -300,7 +299,11 @@ const Index = () => {
                     <p className="text-muted-foreground text-xs italic mb-4">
                       "{review.comment}"
                     </p>
-                    <p className="font-semibold text-sm text-primary">{review.name}</p>
+                    <div className="flex justify-end">
+                      <p className="font-medium pr-3 text-sm text-primary">
+                        {review.name}
+                      </p>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
