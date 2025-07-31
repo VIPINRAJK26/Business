@@ -130,13 +130,13 @@ const Index = () => {
         {/* Features Section */}
 
         {/* Featured Products */}
-        <section className="py-20">
+        <section className="md:py-20 py-6">
           <div className="container mx-auto px-2 ">
-            <div className="text-center mb-16">
+            <div className="text-center md:mb-16 mb-8">
               <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
                 Featured Collection
               </Badge>
-              <h2 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Handpicked
                 <span className="text-accent"> Treasures</span>
               </h2>
@@ -170,13 +170,13 @@ const Index = () => {
         </section>
 
         {/* Categories Showcase */}
-        <section className="py-5 bg-gradient-to-br from-background via-muted/10 to-background">
+        <section className="pb-5 bg-gradient-to-br from-background via-muted/10 to-background">
           <div className="container mx-auto px-0">
-            <div className="text-center mb-16">
+            <div className="text-center md:mb-16 mb-8">
               <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Shop by Category
               </h2>
-              <p className="text-lg px-3 text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm px-3 text-muted-foreground max-w-2xl mx-auto">
                 From vintage collectibles to contemporary crafts, find exactly
                 what speaks to you.
               </p>
@@ -185,7 +185,7 @@ const Index = () => {
               {/* Updated Carousel Container */}
               <div
                 ref={carouselRef}
-                className="flex gap-2 overflow-x-auto pb-6 scrollbar-hide"
+                className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
                 style={{
                   scrollSnapType: "x mandatory",
                   paddingLeft: "5%", // Creates initial left gap
@@ -210,11 +210,11 @@ const Index = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="p-6 flex-grow">
-                          <h3 className="font-playfair font-bold text-2xl mb-2 text-primary group-hover:text-accent transition-colors duration-300">
+                        <div className="p-3 flex-grow">
+                          <h3 className="font-playfair font-bold text-lg mb-2 text-primary group-hover:text-accent transition-colors duration-300">
                             {category.title}
                           </h3>
-                          <p className="text-muted-foreground">
+                          <p className="text-muted-foreground text-sm">
                             {category.description}
                           </p>
                         </div>
@@ -227,7 +227,7 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-muted/30 ">
+        <section className="md:py-20 py-9 bg-muted/30 ">
           <div className="container mx-auto px-1 ">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
@@ -250,9 +250,9 @@ const Index = () => {
         </section>
 
         {/* Customer Reviews */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+        <section className="md:py-20 pt-9 pb-28">
+          <div className="container mx-auto px-3">
+            <div className="text-center md:mb-16 mb-8">
               <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
                 What Our Customers Say
               </h2>
@@ -262,7 +262,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 {
                   name: "Vipin",
@@ -288,19 +288,19 @@ const Index = () => {
                   className="border-0 shadow-soft hover-lift bg-gradient-card"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-center mb-4">
+                  <CardContent className="p-3">
+                    <div className="flex items-center mb-2">
                       {[...Array(review.rating)].map((_, i) => (
                         <Star
                           key={i}
-                          className="w-4 h-4 fill-accent text-accent"
+                          className="w-3 h-3 fill-accent text-accent"
                         />
                       ))}
                     </div>
-                    <p className="text-muted-foreground italic mb-4">
+                    <p className="text-muted-foreground text-xs italic mb-4">
                       "{review.comment}"
                     </p>
-                    <p className="font-semibold text-primary">{review.name}</p>
+                    <p className="font-semibold text-sm text-primary">{review.name}</p>
                   </CardContent>
                 </Card>
               ))}

@@ -116,19 +116,18 @@ const Wishlist: React.FC<WishlistPageProps> = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white ">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
-        <div className="flex items-center justify-between px-5 py-4">
-          <h1 className="text-xl font-semibold text-black">My Wishlist</h1>
-          <div className="bg-black text-white px-3 py-1 rounded-full text-sm font-medium">
-            {products.length}
-          </div>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="pt-20 pb-24 px-2">
+        {/* <div className="mb-6 flex justify-end">
+          <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 flex items-center gap-2">
+            <Heart className="w-6 h-6 text-red-500 animate-pulse" />
+            My Wishlist
+          </h1>
+        </div> */}
+
         {products.length === 0 ? (
           /* Empty State */
           <div className="flex flex-col items-center justify-center py-20 text-center">

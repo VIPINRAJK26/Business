@@ -125,13 +125,13 @@ const Products = () => {
       
       <main className="pt-20">
         {/* Header */}
-        <section className="py-12 bg-gradient-to-br from-background via-muted/10 to-background">
+        <section className="md:py-12 py-5 bg-gradient-to-br from-background via-muted/10 to-background">
           <div className="container mx-auto px-6">
             <div className="text-center animate-fade-in">
               <h1 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
                 Our Products
               </h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-md text-muted-foreground max-w-2xl mx-auto">
                 Discover our curated collection of handmade crafts, collectibles, and unique treasures.
               </p>
             </div>
