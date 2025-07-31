@@ -140,7 +140,7 @@ const Products = () => {
           </div>
         </section>
 
-        <div className="container mx-auto px-6 py-12">
+        <div className="container mx-auto px-2 py-12">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar Filters */}
             <aside className="lg:w-64 space-y-6">
@@ -240,9 +240,9 @@ const Products = () => {
               </div>
 
               {/* Products Grid */}
-              <div className={`grid gap-6 ${
+              <div className={`grid gap-2 ${
                 viewMode === 'grid' 
-                  ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' 
+                  ? 'grid-cols-2  lg:grid-cols-3' 
                   : 'grid-cols-1'
               }`}>
                 {filteredProducts.map((product, index) => (

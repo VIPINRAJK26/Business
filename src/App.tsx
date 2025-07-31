@@ -12,6 +12,8 @@ import BuyNow from "./pages/BuyNow";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/ui/whatsapp";
+import { MobileNavbar } from "./components/BottomNav";
+import "./index.css";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <MobileNavbar />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

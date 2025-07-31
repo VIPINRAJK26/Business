@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Users, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
@@ -23,13 +25,39 @@ const images = [
 
 const Hero = () => {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0); // 0: none, 1: right, -1: left
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setDirection(1);
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
+
+  const navigate = (newDirection: number) => {
+    setDirection(newDirection);
+    setIndex((prev) => (prev + newDirection + images.length) % images.length);
+  };
+
+  const variants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? "100%" : "-100%",
+      opacity: 0,
+      scale: 0.9,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction < 0 ? "100%" : "-100%",
+      opacity: 0,
+      scale: 0.9,
+    }),
+  };
+
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -37,7 +65,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)_/_0.1),transparent_50%)]" />
 
-      <div className="container mx-auto px-6 pt-24 pb-10 relative z-10">
+      <div className="container mx-auto px-4 pt-24 pb-10 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
           {/* Left: Text Content (unchanged) */}
           <div className="text-center lg:text-left">
@@ -105,91 +133,91 @@ const Hero = () => {
           </div>
 
           {/* Right: Enhanced Carousel */}
-          <div className="relative h-[400px] sm:h-[500px] flex items-center justify-center px-4">
-            {/* Floating background element - smaller on mobile */}
-            <div className="absolute w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] bg-gradient-to-br from-accent/20 to-primary/20 rounded-full blur-xl sm:blur-3xl opacity-60 animate-float" />
+          <div className="relative h-[500px] w-full overflow-hidden rounded-3xl">
+            {/* Floating gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-primary/10 to-accent/20 rounded-3xl" />
 
-            {/* Carousel container - full width on mobile */}
-            <div className="relative w-full h-[300px] sm:h-[400px] perspective-1000 mx-2 sm:mx-0">
-              {images.map((item, i) => {
-                const position = (i - index + images.length) % images.length;
-                let transform = "";
-                let zIndex = 0;
-                let opacity = 0;
-                let scale = 1;
-
-                if (position === 0) {
-                  // Current card - centered on mobile
-                  transform = "rotateY(0deg) translateZ(0)";
-                  zIndex = 10;
-                  opacity = 1;
-                  scale = 1;
-                } else if (position === 1) {
-                  // Next card - simplified on mobile
-                  transform =
-                    window.innerWidth < 640
-                      ? "translateX(40px) scale(0.9)"
-                      : "rotateY(25deg) translateZ(-100px) translateX(80px)";
-                  zIndex = 5;
-                  opacity = window.innerWidth < 640 ? 0.8 : 0.7;
-                  scale = 0.9;
-                } else {
-                  // Previous card - simplified on mobile
-                  transform =
-                    window.innerWidth < 640
-                      ? "translateX(-40px) scale(0.9)"
-                      : "rotateY(-25deg) translateZ(-100px) translateX(-80px)";
-                  zIndex = 5;
-                  opacity = window.innerWidth < 640 ? 0.8 : 0.7;
-                  scale = 0.9;
-                }
-
-                return (
-                  <div
-                    key={i}
-                    className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-[cubic-bezier(0.33,1,0.68,1)]`}
-                    style={{
-                      transform,
-                      zIndex,
-                      opacity,
-                      scale,
-                    }}
+            {/* Animated carousel */}
+            <AnimatePresence custom={direction} initial={false}>
+              <motion.div
+                key={index}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                className="absolute inset-0 flex items-center justify-center p-2"
+              >
+                <div className="relative h-full w-full max-w-4xl">
+                  {/* Image with creative frame */}
+                  <motion.div
+                    className="h-full w-full p-[1px] overflow-hidden rounded-2xl shadow-2xl"
+                    whileHover={{ scale: 1.02 }}
                   >
-                    <div className="relative w-full h-full p-2 sm:p-0">
-                      {/* Skewed image container - less skew on mobile */}
-                      <div className="absolute inset-0 overflow-hidden transform -skew-x-1 -skew-y-1 sm:-skew-x-3 sm:-skew-y-2 rotate-1 sm:rotate-2 rounded-lg sm:rounded-xl shadow-lg sm:shadow-2xl border border-white/20 sm:border-2">
-                        <img
-                          src={item.src}
-                          alt={item.title}
-                          className="w-full h-full object-cover transform skew-x-1 skew-y-1 sm:skew-x-3 sm:skew-y-2 -rotate-1 sm:-rotate-2 scale-105 sm:scale-110"
-                        />
-                        {/* Gradient overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                      </div>
-
-                      {/* Title overlay - larger text on mobile */}
-                      <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 text-center px-2">
-                        <h3 className="text-lg sm:text-xl font-bold text-white drop-shadow-md">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-white/80">
-                          {item.subtitle}
-                        </p>
-                      </div>
+                    <div className="relative h-full w-full overflow-hidden rounded-2xl">
+                      <img
+                        src={images[index].src}
+                        alt={images[index].title}
+                        className="h-full w-full object-cover rounded-2xl"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-2xl" />
                     </div>
-                  </div>
-                );
-              })}
-            </div>
+                  </motion.div>
 
-            {/* Carousel indicators - larger and more spaced on mobile */}
-            <div className="absolute bottom-2 sm:bottom-0 left-0 right-0 flex justify-center gap-3 sm:gap-2 mt-4">
+                  {/* Text overlay */}
+                  <div className="absolute bottom-8 left-8 right-8 text-left">
+                    <motion.h3
+                      className="text-3xl font-bold text-white drop-shadow-lg"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      {images[index].title}
+                    </motion.h3>
+                    <motion.p
+                      className="text-lg text-white/90 mt-2"
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.4 }}
+                    >
+                      {images[index].subtitle}
+                    </motion.p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Navigation arrows */}
+            <button
+              onClick={() => navigate(-1)}
+              className="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all hover:bg-white/30"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-6 w-6 text-white" />
+            </button>
+            <button
+              onClick={() => navigate(1)}
+              className="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all hover:bg-white/30"
+              aria-label="Next"
+            >
+              <ChevronRight className="h-6 w-6 text-white" />
+            </button>
+
+            {/* Creative indicators */}
+            <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
               {images.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setIndex(i)}
-                  className={`w-4 h-4 sm:w-3 sm:h-3 rounded-full transition-all ${
-                    i === index ? "bg-accent sm:w-6" : "bg-muted-foreground/30"
+                  onClick={() => {
+                    setDirection(i > index ? 1 : -1);
+                    setIndex(i);
+                  }}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i === index ? "w-8 bg-white" : "w-4 bg-white/40"
                   }`}
                   aria-label={`Go to slide ${i + 1}`}
                 />
