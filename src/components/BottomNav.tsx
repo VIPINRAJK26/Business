@@ -61,7 +61,7 @@ export const MobileNavbar = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50 safe-pb">
+    <nav className="fixed md:hidden bottom-0 left-0 right-0 bg-white border-t border-gray-100 shadow-lg z-50 safe-pb">
       <div className="flex justify-around items-center px-2 py-3">
         {navItems.map((item, index) => (
           <button

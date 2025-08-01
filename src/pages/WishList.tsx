@@ -120,13 +120,12 @@ const Wishlist: React.FC<WishlistPageProps> = () => {
       {/* Header */}
 
       {/* Main Content */}
-      <main className="pt-20 pb-24 px-2">
-        {/* <div className="mb-6 flex justify-end">
+      <main className="pt-20 pb-24 px-2 md:max-w-7xl mx-auto">
+        <div className="mb-6 md:flex hidden justify-end">
           <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 flex items-center gap-2">
-            <Heart className="w-6 h-6 text-red-500 animate-pulse" />
             My Wishlist
           </h1>
-        </div> */}
+        </div>
 
         {products.length === 0 ? (
           /* Empty State */
@@ -142,22 +141,26 @@ const Wishlist: React.FC<WishlistPageProps> = () => {
         ) : (
           <>
             {/* Filter Bar */}
-            <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                    selectedCategory === category
-                      ? "bg-black text-white"
-                      : "bg-gray-100 text-black hover:bg-gray-200"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+            <div className="flex justify-between">
+              <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+                      selectedCategory === category
+                        ? "bg-black text-white"
+                        : "bg-gray-100 text-black hover:bg-gray-200"
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
+              <div className="pt-1 text-red-600">
+                <Heart className="fill-red-600" />
+              </div>
             </div>
-
             {/* Product Grid */}
             <div className=" grid grid-cols-2 md:grid-cols-3 gap-2">
               {filteredProducts.map((product, index) => (

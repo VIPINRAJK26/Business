@@ -103,7 +103,7 @@ const Cart = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      <main className="pt-20">
+      <main className="py-20">
         <div className="container mx-auto px-4 py-6">
           <div className="max-w-4xl mx-auto">
             <h1 className="font-playfair text-2xl sm:text-3xl font-bold text-primary mb-6">

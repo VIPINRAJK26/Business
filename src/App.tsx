@@ -12,6 +12,7 @@ import BuyNow from "./pages/BuyNow";
 import OrderPage from "./pages/Orders";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
+import ProfilePage from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/ui/whatsapp";
 import Wishlist from "./pages/WishList";
@@ -38,9 +39,10 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/orders" element={<OrderPage />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <MobileNavbar />
+        <MobileNavbar  />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
