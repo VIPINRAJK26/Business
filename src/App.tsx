@@ -16,6 +16,7 @@ import ProfilePage from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import WhatsAppButton from "./components/ui/whatsapp";
 import Wishlist from "./pages/WishList";
+import ScrollToTop from "./components/ScrollToTop";
 import { MobileNavbar } from "./components/BottomNav";
 import "./index.css";
 
@@ -28,6 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
@@ -42,7 +44,7 @@ const App = () => (
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <MobileNavbar  />
+        <MobileNavbar />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
