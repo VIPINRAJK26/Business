@@ -102,11 +102,10 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      
       <main className="py-20">
-        <div className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 md:py-6 pt-2 pb-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="font-playfair text-2xl sm:text-3xl font-bold text-primary mb-6">
+            <h1 className="font-playfair text-xl md:text-3xl font-bold text-primary mb-6">
               Shopping Cart ({cartItems.length} items)
             </h1>
 
@@ -131,7 +130,7 @@ const Cart = () => {
                             <h3 className="font-semibold text-sm sm:text-base leading-tight mb-2 line-clamp-2">
                               {item.name}
                             </h3>
-                            <p className="text-lg font-bold text-primary">
+                            <p className="text-sm font-bold text-primary">
                               ${item.price}
                             </p>
                           </div>
@@ -153,7 +152,9 @@ const Cart = () => {
                             <Button
                               variant="ghost"
                               size="sm"
-                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                              onClick={() =>
+                                updateQuantity(item.id, item.quantity - 1)
+                              }
                               className="h-8 w-8 p-0"
                             >
                               <Minus className="w-3 h-3" />
@@ -164,17 +165,21 @@ const Cart = () => {
                             <Button
                               variant="ghost"
                               size="sm"
-                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                              onClick={() =>
+                                updateQuantity(item.id, item.quantity + 1)
+                              }
                               className="h-8 w-8 p-0"
                               disabled={item.quantity >= item.inStock}
                             >
                               <Plus className="w-3 h-3" />
                             </Button>
                           </div>
-                          
+
                           <div className="text-right">
-                            <p className="text-sm text-muted-foreground">Total</p>
-                            <p className="font-bold text-primary">
+                            <p className="text-sm text-muted-foreground">
+                              Total
+                            </p>
+                            <p className="font-bold text-sm text-primary">
                               ${(item.price * item.quantity).toFixed(2)}
                             </p>
                           </div>
@@ -197,49 +202,61 @@ const Cart = () => {
                   <h2 className="font-playfair text-lg font-semibold mb-4">
                     Order Summary
                   </h2>
-                  
+
                   <div className="space-y-3">
                     <div className="flex justify-between">
-                      <span className="text-muted-foreground">Subtotal</span>
-                      <span className="font-medium">${subtotal.toFixed(2)}</span>
-                    </div>
-                    
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Shipping</span>
-                      <span className={`font-medium ${shipping === 0 ? 'text-green-600' : ''}`}>
-                        {shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}
+                      <span className="text-muted-foreground text-sm">
+                        Subtotal
+                      </span>
+                      <span className="font-medium text-sm">
+                        ${subtotal.toFixed(2)}
                       </span>
                     </div>
-                    
+
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground text-sm">
+                        Shipping
+                      </span>
+                      <span
+                        className={`font-medium ${
+                          shipping === 0 ? "text-green-600" : ""
+                        }`}
+                      >
+                        {shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}
+                      </span>
+                    </div>
+
                     {subtotal < 50 && (
                       <p className="text-xs text-muted-foreground">
                         Add ${(50 - subtotal).toFixed(2)} more for free shipping
                       </p>
                     )}
-                    
+
                     <Separator />
-                    
-                    <div className="flex justify-between text-lg font-bold">
-                      <span>Total</span>
-                      <span className="text-primary">${total.toFixed(2)}</span>
+
+                    <div className="flex justify-between font-bold">
+                      <span className="text-sm">Total</span>
+                      <span className="text-primary text-sm">
+                        ${total.toFixed(2)}
+                      </span>
                     </div>
                   </div>
 
-                  <div className="mt-6 space-y-3">
-                    <Button 
-                      size="lg" 
-                      className="w-full"
+                  <div className="mt-6  space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full "
                       onClick={proceedToCheckout}
                     >
                       Proceed to Checkout
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
-                    
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
+
+                    <Button
+                      variant="outline"
+                      size="lg"
                       className="w-full"
-                      onClick={() => navigate('/products')}
+                      onClick={() => navigate("/products")}
                     >
                       Continue Shopping
                     </Button>

@@ -68,7 +68,7 @@ const OrderHistoryPage = () => {
         <div className="container mx-auto px-4 py-3 md:py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-xl font-bold tracking-tight md:text-3xl">
+              <h1 className="text-lg font-bold tracking-tight md:text-3xl">
                 Order History
               </h1>
               <p className="text-gray-500 mt-1 text-sm md:text-base">
@@ -111,12 +111,14 @@ const OrderHistoryPage = () => {
                     <Package className="w-5 h-5 text-gray-700" />
                   </div>
                   <div>
-                    <h2 className="font-medium text-gray-900">{order.id}</h2>
+                    <h2 className="font-medium text-sm text-gray-900">
+                      {order.id}
+                    </h2>
                     <p className="text-xs text-gray-500">{order.date}</p>
                   </div>
                 </div>
                 <div
-                  className={`flex items-center text-sm px-3 py-1 rounded-full ${
+                  className={`flex items-center text-xs px-3 py-1 rounded-full ${
                     order.status === "Delivered"
                       ? "bg-emerald-50 text-emerald-700"
                       : order.status === "Shipped"
@@ -140,13 +142,15 @@ const OrderHistoryPage = () => {
                         <Package className="w-5 h-5 text-gray-400" />
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900">{item.name}</p>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <p className="font-medium text-gray-900 text-sm">
+                          {item.name}
+                        </p>
+                        <p className="text-xs text-gray-500 mt-1 ">
                           Qty: {item.quantity}
                         </p>
                       </div>
                     </div>
-                    <p className="font-medium text-gray-900">
+                    <p className="font-medium text-gray-900 text-sm">
                       ${item.price.toFixed(2)}
                     </p>
                   </div>
@@ -182,7 +186,10 @@ const OrderHistoryPage = () => {
                       ${order.total.toFixed(2)}
                     </p>
                   </div>
-                  <button title="View Order" className="text-gray-400 hover:text-gray-700">
+                  <button
+                    title="View Order"
+                    className="text-gray-400 hover:text-gray-700"
+                  >
                     <ChevronRight className="w-5 h-5" />
                   </button>
                 </div>

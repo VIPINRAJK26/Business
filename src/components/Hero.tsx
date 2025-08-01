@@ -74,12 +74,12 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center justify-center">
           {/* Left: Text Content (unchanged) */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6 mx-auto lg:mx-0">
+            <div className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-xs font-medium mb-6 mx-auto lg:mx-0">
               <Star className="w-4 h-4" />
               <span>Handcrafted with Love</span>
             </div>
 
-            <h1 className="font-playfair text-3xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+            <h1 className="font-playfair text-2xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
               Unique <span className="text-accent">Crafts</span>
               <br />
               For Every Home

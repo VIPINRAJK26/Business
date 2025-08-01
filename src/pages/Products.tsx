@@ -122,17 +122,17 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      
       <main className="pt-20">
         {/* Header */}
-        <section className="md:py-12 py-5 bg-gradient-to-br from-background via-muted/10 to-background">
+        <section className="md:py-12 py-3 bg-gradient-to-br from-background via-muted/10 to-background">
           <div className="container mx-auto px-6">
             <div className="text-center animate-fade-in">
-              <h1 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
+              <h1 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-2">
                 Our Products
               </h1>
-              <p className="text-md text-muted-foreground max-w-2xl mx-auto">
-                Discover our curated collection of handmade crafts, collectibles, and unique treasures.
+              <p className="text-xs text-muted-foreground max-w-2xl mx-auto">
+                Discover our curated collection of handmade crafts,
+                collectibles, and unique treasures.
               </p>
             </div>
           </div>
@@ -149,13 +149,13 @@ const Products = () => {
                   placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 text-sm"
                 />
               </div>
 
               {/* Categories */}
               <div className="bg-card p-6 rounded-2xl shadow-soft border border-border/50">
-                <h3 className="font-playfair font-semibold text-lg mb-4 text-primary">
+                <h3 className="font-playfair font-semibold text-md mb-4 text-primary">
                   Categories
                 </h3>
                 <div className="space-y-2">
@@ -165,11 +165,11 @@ const Products = () => {
                       onClick={() => setSelectedCategory(category.id)}
                       className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-300 ${
                         selectedCategory === category.id
-                          ? 'bg-primary text-primary-foreground'
-                          : 'hover:bg-muted text-muted-foreground hover:text-foreground'
+                          ? "bg-primary text-primary-foreground"
+                          : "hover:bg-muted text-muted-foreground hover:text-foreground"
                       }`}
                     >
-                      <span>{category.name}</span>
+                      <span className="text-sm">{category.name}</span>
                       <Badge variant="secondary" className="ml-2">
                         {category.count}
                       </Badge>
@@ -180,16 +180,16 @@ const Products = () => {
 
               {/* Price Range */}
               <div className="bg-card p-6 rounded-2xl shadow-soft border border-border/50">
-                <h3 className="font-playfair font-semibold text-lg mb-4 text-primary">
+                <h3 className="font-playfair font-semibold text-md mb-4 text-primary">
                   Price Range
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <Input placeholder="Min" className="w-20" />
+                    <Input placeholder="Min" className="w-20 text-xs" />
                     <span className="text-muted-foreground">-</span>
-                    <Input placeholder="Max" className="w-20" />
+                    <Input placeholder="Max" className="w-20 text-xs" />
                   </div>
-                  <Button variant="outline" className="w-full">
+                  <Button variant="outline" className="w-full text-xs">
                     Apply
                   </Button>
                 </div>
@@ -206,14 +206,18 @@ const Products = () => {
                       <SelectValue placeholder="Sort by" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="featured">Featured</SelectItem>
-                      <SelectItem value="price-low">Price: Low to High</SelectItem>
-                      <SelectItem value="price-high">Price: High to Low</SelectItem>
+                      <SelectItem value="featured" >Featured</SelectItem>
+                      <SelectItem value="price-low">
+                        Price: Low to High
+                      </SelectItem>
+                      <SelectItem value="price-high">
+                        Price: High to Low
+                      </SelectItem>
                       <SelectItem value="rating">Highest Rated</SelectItem>
                       <SelectItem value="newest">Newest</SelectItem>
                     </SelectContent>
                   </Select>
-                  
+
                   <span className="text-sm text-muted-foreground">
                     {filteredProducts.length} products found
                   </span>
@@ -221,16 +225,16 @@ const Products = () => {
 
                 <div className="flex items-center space-x-2">
                   <Button
-                    variant={viewMode === 'grid' ? 'default' : 'outline'}
+                    variant={viewMode === "grid" ? "default" : "outline"}
                     size="icon"
-                    onClick={() => setViewMode('grid')}
+                    onClick={() => setViewMode("grid")}
                   >
                     <Grid className="w-4 h-4" />
                   </Button>
                   <Button
-                    variant={viewMode === 'list' ? 'default' : 'outline'}
+                    variant={viewMode === "list" ? "default" : "outline"}
                     size="icon"
-                    onClick={() => setViewMode('list')}
+                    onClick={() => setViewMode("list")}
                   >
                     <List className="w-4 h-4" />
                   </Button>
@@ -238,11 +242,13 @@ const Products = () => {
               </div>
 
               {/* Products Grid */}
-              <div className={`grid gap-2 ${
-                viewMode === 'grid' 
-                  ? 'grid-cols-2  lg:grid-cols-3' 
-                  : 'grid-cols-1'
-              }`}>
+              <div
+                className={`grid gap-2 ${
+                  viewMode === "grid"
+                    ? "grid-cols-2  lg:grid-cols-3"
+                    : "grid-cols-1"
+                }`}
+              >
                 {filteredProducts.map((product, index) => (
                   <div
                     key={product.id}
@@ -273,10 +279,12 @@ const Products = () => {
                   <p className="text-muted-foreground mb-6">
                     Try adjusting your search or filter criteria
                   </p>
-                  <Button onClick={() => {
-                    setSearchQuery('');
-                    setSelectedCategory('all');
-                  }}>
+                  <Button
+                    onClick={() => {
+                      setSearchQuery("");
+                      setSelectedCategory("all");
+                    }}
+                  >
                     Clear Filters
                   </Button>
                 </div>

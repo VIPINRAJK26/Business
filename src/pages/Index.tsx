@@ -135,7 +135,7 @@ const Index = () => {
               <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
                 Featured Collection
               </Badge>
-              <h2 className="font-playfair text-3xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-4">
                 Handpicked
                 <span className="text-accent"> Treasures</span>
               </h2>
@@ -172,7 +172,7 @@ const Index = () => {
         <section className="pb-5 bg-gradient-to-br from-background via-muted/10 to-background">
           <div className="container mx-auto px-0">
             <div className="text-center md:mb-16 mb-8">
-              <h2 className="font-playfair text-3xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-4">
                 Shop by Category
               </h2>
               <p className="text-sm px-3 text-muted-foreground max-w-2xl mx-auto">
@@ -210,10 +210,10 @@ const Index = () => {
                           />
                         </div>
                         <div className="p-3 flex-grow">
-                          <h3 className="font-playfair font-bold text-lg mb-2 text-primary group-hover:text-accent transition-colors duration-300">
+                          <h3 className="font-playfair font-bold text-sm mb-2 text-primary group-hover:text-accent transition-colors duration-300">
                             {category.title}
                           </h3>
-                          <p className="text-muted-foreground text-sm">
+                          <p className="text-muted-foreground text-xs">
                             {category.description}
                           </p>
                         </div>
@@ -252,10 +252,10 @@ const Index = () => {
         <section className="md:py-20 pt-9 pb-28">
           <div className="container mx-auto px-3">
             <div className="text-center md:mb-16 mb-8">
-              <h2 className="font-playfair text-3xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-4">
                 What Our Customers Say
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
                 Join thousands of happy customers who've found their perfect
                 treasures with us.
               </p>
