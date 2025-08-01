@@ -122,23 +122,11 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <main className="pt-20">
+      <main className="py-20">
         {/* Header */}
-        <section className="md:py-12 py-3 bg-gradient-to-br from-background via-muted/10 to-background">
-          <div className="container mx-auto px-6">
-            <div className="text-center animate-fade-in">
-              <h1 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-2">
-                Our Products
-              </h1>
-              <p className="text-xs text-muted-foreground max-w-2xl mx-auto">
-                Discover our curated collection of handmade crafts,
-                collectibles, and unique treasures.
-              </p>
-            </div>
-          </div>
-        </section>
+        
 
-        <div className="container mx-auto px-2 py-12">
+        <div className="container mx-auto px-2 pb-3">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar Filters */}
             <aside className="lg:w-64 space-y-6">
@@ -262,7 +250,7 @@ const Products = () => {
 
               {/* Load More */}
               {filteredProducts.length > 0 && (
-                <div className="text-center mt-12">
+                <div className="text-center mt-5">
                   <Button variant="outline" size="lg" className="hover-lift">
                     Load More Products
                   </Button>

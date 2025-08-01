@@ -36,62 +36,52 @@ const About = () => {
     },
   ];
 
-  const team = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Founder & Curator',
-      description: 'Passionate collector with 15+ years of experience in handmade crafts.',
-      emoji: '👩‍🎨',
-    },
-    {
-      name: 'Mike Chen',
-      role: 'Quality Specialist',
-      description: 'Expert in collectibles authentication and quality assurance.',
-      emoji: '🔍',
-    },
-    {
-      name: 'Emma Davis',
-      role: 'Community Manager',
-      description: 'Building connections between artists and craft enthusiasts.',
-      emoji: '🤝',
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
-      
-      <main className="pt-20">
+      <main className="pt-10">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
+        <section className="py-10 bg-gradient-to-br from-background via-muted/20 to-background">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-4xl mx-auto animate-fade-in">
               <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
                 Our Story
               </Badge>
-              
-              <h1 className="font-playfair text-5xl lg:text-6xl font-bold text-primary mb-6">
+
+              <h1 className="font-playfair text-xl lg:text-6xl font-bold text-primary mb-4">
                 Crafting Stories,
-                <span className="text-accent"> One Piece</span> at a Time
+                <span className="text-accent">
+                  {" "}
+                  <br /> One Piece
+                </span>{" "}
+                at a Time
               </h1>
-              
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Founded in 2023, CraftCorner began as a small passion project to connect 
-                unique handmade crafts with people who appreciate authentic artistry. Today, 
-                we're proud to be a thriving community of creators and collectors.
+
+              <p className="text-sm text-center text-muted-foreground mb-8 leading-relaxed">
+                Founded in 2023, CraftCorner began as a small passion project to
+                connect unique handmade crafts with people who appreciate
+                authentic artistry. Today, we're proud to be a thriving
+                community of creators and collectors.
               </p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">2023</div>
-                  <p className="text-muted-foreground">Founded</p>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    2023
+                  </div>
+                  <p className="text-muted-foreground text-sm">Founded</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">1,000+</div>
-                  <p className="text-muted-foreground">Happy Customers</p>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    1,000+
+                  </div>
+                  <p className="text-muted-foreground text-sm">Happy Customers</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <p className="text-muted-foreground">Unique Products</p>
+                  <div className="text-2xl font-bold text-primary mb-2">
+                    500+
+                  </div>
+                  <p className="text-muted-foreground text-sm">Unique Products</p>
                 </div>
               </div>
             </div>
@@ -99,33 +89,33 @@ const About = () => {
         </section>
 
         {/* Values Section */}
-        <section className="py-20">
+        <section className="pt-5">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="font-playfair text-4xl font-bold text-primary mb-4">
+            <div className="text-center mb-8">
+              <h2 className="font-playfair text-xl font-bold text-primary mb-4">
                 Our Values
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                These principles guide everything we do, from selecting products 
+              <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+                These principles guide everything we do, from selecting products
                 to serving our community.
               </p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {values.map((value, index) => (
-                <Card 
-                  key={value.title} 
+                <Card
+                  key={value.title}
                   className="border-0 shadow-soft hover-lift bg-gradient-card group"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-4">
                     <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors duration-300">
                       <value.icon className="w-6 h-6 text-accent" />
                     </div>
-                    <h3 className="font-playfair font-semibold text-xl mb-3 text-primary">
+                    <h3 className="font-playfair font-semibold text-md mb-3 text-primary">
                       {value.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground text-xs leading-relaxed">
                       {value.description}
                     </p>
                   </CardContent>
@@ -172,23 +162,26 @@ const About = () => {
         </section> */}
 
         {/* Mission Section */}
-        <section className="py-20">
+        <section className="py-5 mb-12">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="font-playfair text-4xl font-bold text-primary mb-8">
+            <div className="max-w-4xl mx-auto text-center pt-4">
+              <h2 className="font-playfair text-xl font-bold text-primary mb-4">
                 Our Mission
               </h2>
-              <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                To create a marketplace where authentic craftsmanship meets passionate collectors, 
-                fostering a community that values quality, creativity, and the stories behind 
-                every handmade piece.
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                To create a marketplace where authentic craftsmanship meets
+                passionate collectors, fostering a community that values
+                quality, creativity, and the stories behind every handmade
+                piece.
               </p>
               <div className="bg-gradient-card p-8 rounded-2xl shadow-soft">
-                <p className="text-lg text-foreground italic">
-                  "Every craft tells a story, every collector preserves a memory, 
-                  and every purchase supports an artist's dream."
+                <p className="text-xs text-foreground italic">
+                  "Every craft tells a story, every collector preserves a
+                  memory, and every purchase supports an artist's dream."
                 </p>
-                <p className="text-accent font-medium mt-4">- The CraftCorner Team</p>
+                <p className="text-accent text-xs font-medium mt-4">
+                  - The CraftCorner Team
+                </p>
               </div>
             </div>
           </div>
