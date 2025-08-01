@@ -135,11 +135,11 @@ const Index = () => {
               <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
                 Featured Collection
               </Badge>
-              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-3xl lg:text-5xl font-bold text-primary mb-4">
                 Handpicked
                 <span className="text-accent"> Treasures</span>
               </h2>
-              <p className="text-md text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
                 Discover our most loved items, carefully curated for their
                 exceptional quality and unique character.
               </p>
@@ -172,7 +172,7 @@ const Index = () => {
         <section className="pb-5 bg-gradient-to-br from-background via-muted/10 to-background">
           <div className="container mx-auto px-0">
             <div className="text-center md:mb-16 mb-8">
-              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-3xl lg:text-5xl font-bold text-primary mb-4">
                 Shop by Category
               </h2>
               <p className="text-sm px-3 text-muted-foreground max-w-2xl mx-auto">
@@ -226,22 +226,22 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="md:py-20 py-9 bg-muted/30 ">
+        <section className="md:py-20 py-8 bg-muted/30 ">
           <div className="container mx-auto px-1 ">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((feature, index) => (
                 <div
                   key={feature.title}
                   className="text-center group animate-fade-in"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
-                  <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-all duration-300 hover-lift">
-                    <feature.icon className="w-8 h-8 text-accent" />
+                  <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-all duration-300 hover-lift">
+                    <feature.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="font-playfair font-semibold text-lg mb-2 text-primary">
+                  <h3 className="font-playfair font-semibold text-md mb-2 text-primary">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-muted-foreground text-xs">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -252,7 +252,7 @@ const Index = () => {
         <section className="md:py-20 pt-9 pb-28">
           <div className="container mx-auto px-3">
             <div className="text-center md:mb-16 mb-8">
-              <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-3xl lg:text-5xl font-bold text-primary mb-4">
                 What Our Customers Say
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -296,7 +296,7 @@ const Index = () => {
                         />
                       ))}
                     </div>
-                    <p className="text-muted-foreground text-xs italic mb-4">
+                    <p className="text-muted-foreground text-xs italic mb-1">
                       "{review.comment}"
                     </p>
                     <div className="flex justify-end">

@@ -65,10 +65,10 @@ const OrderHistoryPage = () => {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
       <header className="bg-white border-b border-gray-100 pt-14 sticky top-0 z-10 shadow-sm">
-        <div className="container mx-auto px-4 py-5 md:py-6">
+        <div className="container mx-auto px-4 py-3 md:py-6">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
+              <h1 className="text-xl font-bold tracking-tight md:text-3xl">
                 Order History
               </h1>
               <p className="text-gray-500 mt-1 text-sm md:text-base">

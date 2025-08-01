@@ -21,6 +21,11 @@ const images = [
     title: "Collectibles",
     subtitle: "Rare finds",
   },
+  {
+    src: "/case.jpg",
+    title: "Cases",
+    subtitle: "Smart Phones",
+  },
 ];
 
 const Hero = () => {
@@ -74,13 +79,13 @@ const Hero = () => {
               <span>Handcrafted with Love</span>
             </div>
 
-            <h1 className="font-playfair text-4xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+            <h1 className="font-playfair text-3xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
               Unique <span className="text-accent">Crafts</span>
               <br />
               For Every Home
             </h1>
 
-            <p className="text-lg px-5 md:px-0 text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0">
+            <p className="text-sm px-5 md:px-0 text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0">
               Discover handmade treasures, collectible Hot Wheels, and unique
               crafts that bring personality to your space. Each piece tells a
               story.

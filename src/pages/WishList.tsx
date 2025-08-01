@@ -157,8 +157,8 @@ const Wishlist: React.FC<WishlistPageProps> = () => {
                   </button>
                 ))}
               </div>
-              <div className="pt-1 text-red-600">
-                <Heart className="fill-red-600" />
+              <div className="pt-1 text-rose-600">
+                <Heart className="fill-rose-600" />
               </div>
             </div>
             {/* Product Grid */}
