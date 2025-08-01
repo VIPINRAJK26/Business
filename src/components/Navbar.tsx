@@ -12,11 +12,11 @@ const Navbar = () => {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Products', path: '/products' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Profile', path: '/profile' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Products", path: "/products" },
+    { name: "Contact", path: "/contact" },
+    { name: "Profile", path: "/profile", desktopOnly: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -37,25 +37,44 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative font-medium transition-all duration-300 ${
-                  isActive(item.path)
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {item.name}
-                {isActive(item.path) && (
-                  <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                )}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              if (item.desktopOnly)
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`relative font-medium transition-all duration-300 ${
+                      isActive(item.path)
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {item.name}
+                    {isActive(item.path) && (
+                      <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                    )}
+                  </Link>
+                );
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`relative font-medium transition-all duration-300 ${
+                    isActive(item.path)
+                      ? "text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {item.name}
+                  {isActive(item.path) && (
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Search, Cart & Mobile Menu */}
+          {/* Search, User & Mobile Menu */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             <Button
               variant="ghost"
@@ -66,24 +85,22 @@ const Navbar = () => {
               <Search className="w-5 h-5" />
             </Button>
 
-            {/* Cart Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => navigate('/cart')}
-              className="relative hover-lift"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              <Badge className="absolute -top-1 -right-1 px-1 min-w-[16px] h-4 flex items-center justify-center text-xs">
-                3
-              </Badge>
-            </Button>
-
-            {/* User Button - Hidden on Mobile */}
+            {/* Desktop User Icon */}
             <Button
               variant="ghost"
               size="icon"
               className="hidden sm:flex hover-lift"
+              onClick={() => navigate("/profile")}
+            >
+              <User className="w-5 h-5" />
+            </Button>
+
+            {/* Mobile User Icon */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="sm:hidden hover-lift"
+              onClick={() => navigate("/profile")}
             >
               <User className="w-5 h-5" />
             </Button>
@@ -95,7 +112,11 @@ const Navbar = () => {
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -115,20 +136,22 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50 animate-fade-in">
             <div className="space-y-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`block px-4 py-2 rounded-lg transition-all duration-300 ${
-                    isActive(item.path)
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems
+                .filter((item) => !item.desktopOnly) // remove Profile from mobile
+                .map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`block px-4 py-2 rounded-lg transition-all duration-300 ${
+                      isActive(item.path)
+                        ? "bg-primary text-primary-foreground"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
             </div>
           </div>
         )}

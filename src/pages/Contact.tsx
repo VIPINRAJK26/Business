@@ -63,7 +63,7 @@ const Contact = () => {
                 Get In Touch
               </Badge>
 
-              <h1 className="font-playfair text-2xl lg:text-6xl font-bold text-primary mb-6">
+              <h1 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-6">
                 We'd Love to
                 <span className="text-accent"> Hear</span> From You
               </h1>
@@ -107,8 +107,8 @@ const Contact = () => {
 
         {/* Contact Form & Map */}
         <section className="">
-          <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="container mx-auto max-w-4xl md:py-10  px-6">
+            <div className="grid grid-cols-1  gap-16">
               {/* Contact Form */}
               <div className="animate-fade-in">
                 <h2 className="font-playfair text-xl font-bold text-primary mb-3">
