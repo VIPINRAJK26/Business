@@ -48,7 +48,7 @@ const About = () => {
                 Our Story
               </Badge>
 
-              <h1 className="font-playfair text-xl lg:text-6xl font-bold text-primary mb-4">
+              <h1 className="font-playfair text-2xl lg:text-6xl font-bold text-primary mb-4">
                 Crafting Stories,
                 <span className="text-accent">
                   {" "}
@@ -66,19 +66,19 @@ const About = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">
+                  <div className="text-xl font-bold text-primary mb-2">
                     2023
                   </div>
                   <p className="text-muted-foreground text-sm">Founded</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">
+                  <div className="text-xl font-bold text-primary mb-2">
                     1,000+
                   </div>
                   <p className="text-muted-foreground text-sm">Happy Customers</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-2">
+                  <div className="text-xl font-bold text-primary mb-2">
                     500+
                   </div>
                   <p className="text-muted-foreground text-sm">Unique Products</p>
