@@ -23,8 +23,8 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/50">
-      <div className="container mx-auto md:px-6 px-2">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto md:px-6 px-0">
+        <div className="flex items-center px-2 justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
@@ -123,7 +123,7 @@ const Navbar = () => {
 
         {/* Search Bar */}
         {isSearchOpen && (
-          <div className="py-4 border-t border-border/50 animate-fade-in">
+          <div className="py-4  border-t border-border/50 animate-fade-in">
             <Input
               placeholder="Search products..."
               className="max-w-md mx-auto"
@@ -134,10 +134,10 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50 animate-fade-in">
+          <div className="md:hidden py-4  border-border/60 shadow-md border-b  animate-fade-in">
             <div className="space-y-2">
               {navItems
-                .filter((item) => !item.desktopOnly) // remove Profile from mobile
+                .filter((item) => !item.desktopOnly)
                 .map((item) => (
                   <Link
                     key={item.name}
