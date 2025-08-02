@@ -1,20 +1,25 @@
 User-agent: Googlebot
-Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /api/
 
 User-agent: Bingbot
-Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /api/
 
 User-agent: Twitterbot
-Allow: /
+Disallow:
 
 User-agent: facebookexternalhit
-Allow: /
+Disallow:
 
 User-agent: *
 Disallow: /admin/
 Disallow: /cart/
 Disallow: /checkout/
 Disallow: /api/
-Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://fleeby.in/sitemap.xml
