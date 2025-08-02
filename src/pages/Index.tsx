@@ -60,7 +60,7 @@ const Index = () => {
     {
       icon: Truck,
       title: "Free Shipping",
-      description: "On orders over $50",
+      description: "On all Products",
     },
     {
       icon: Shield,
@@ -160,7 +160,7 @@ const Index = () => {
             </div>
 
             <div className="text-center">
-              <Button asChild size="lg" className="hover-lift hover-glow">
+              <Button role="link" asChild size="lg" className="hover-lift hover-glow">
                 <Link to="/products">
                   View All Products
                   <ArrowRight className="w-5 h-5 ml-2" />

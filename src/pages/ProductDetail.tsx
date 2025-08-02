@@ -61,13 +61,12 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      
-      <main className="pt-16">
+      <main className="pt-16 pb-20">
         {/* Mobile-first layout */}
         <div className="container mx-auto px-4 py-6">
           {/* Back button */}
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             size="sm"
             onClick={() => navigate(-1)}
             className="mb-4 -ml-2"
@@ -80,15 +79,15 @@ const ProductDetail = () => {
             {/* Product Images */}
             <div className="space-y-4">
               <div className="aspect-square bg-muted/20 rounded-2xl flex items-center justify-center text-8xl border border-border/50">
-                <img src={product.images[0]}  alt="" />
+                <img src={product.images[0]} alt="product image" />
               </div>
               <div className="grid grid-cols-4 gap-2">
                 {product.images.map((image, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="aspect-square bg-muted/20 rounded-lg flex items-center justify-center text-2xl sm:text-3xl border border-border/50 cursor-pointer hover:border-primary/50 transition-colors"
                   >
-                    <img src={image} alt="" />
+                    <img src={image} alt="product image" />
                   </div>
                 ))}
               </div>
@@ -100,7 +99,7 @@ const ProductDetail = () => {
                 <Badge variant="secondary" className="mb-2">
                   {product.category}
                 </Badge>
-                <h1 className="font-playfair text-2xl sm:text-3xl lg:text-4xl font-bold text-primary leading-tight">
+                <h1 className="font-playfair text-xl sm:text-3xl lg:text-4xl font-bold text-primary leading-tight">
                   {product.name}
                 </h1>
               </div>
@@ -109,19 +108,25 @@ const ProductDetail = () => {
               <div className="flex items-center gap-2">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'fill-primary text-primary' : 'text-muted'}`} 
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${
+                        i < Math.floor(product.rating)
+                          ? "fill-primary text-primary"
+                          : "text-muted"
+                      }`}
                     />
                   ))}
                 </div>
                 <span className="text-sm font-medium">{product.rating}</span>
-                <span className="text-sm text-muted-foreground">({product.reviews} reviews)</span>
+                <span className="text-sm text-muted-foreground">
+                  ({product.reviews} reviews)
+                </span>
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-3">
-                <span className="text-3xl sm:text-4xl font-bold text-primary">
+                <span className="text-xl sm:text-4xl font-bold text-primary">
                   ${product.price}
                 </span>
                 {product.originalPrice && (
@@ -133,8 +138,14 @@ const ProductDetail = () => {
 
               {/* Stock */}
               <div className="text-sm">
-                <span className={product.inStock > 5 ? 'text-green-600' : 'text-orange-600'}>
-                  {product.inStock > 5 ? 'In Stock' : `Only ${product.inStock} left!`}
+                <span
+                  className={
+                    product.inStock > 5 ? "text-green-600" : "text-orange-600"
+                  }
+                >
+                  {product.inStock > 5
+                    ? "In Stock"
+                    : `Only ${product.inStock} left!`}
                 </span>
               </div>
 
@@ -156,7 +167,9 @@ const ProductDetail = () => {
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => setQuantity(Math.min(product.inStock, quantity + 1))}
+                    onClick={() =>
+                      setQuantity(Math.min(product.inStock, quantity + 1))
+                    }
                     className="h-10 w-10 p-0"
                   >
                     <Plus className="w-4 h-4" />
@@ -166,16 +179,16 @@ const ProductDetail = () => {
 
               {/* Action Buttons */}
               <div className="space-y-3 pt-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="w-full h-12 text-base font-semibold"
                   onClick={buyNow}
                 >
                   Buy Now - ${(product.price * quantity).toFixed(2)}
                 </Button>
                 <div className="grid grid-cols-[1fr_auto] gap-3">
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="lg"
                     className="h-12 text-base font-semibold"
                     onClick={addToCart}
@@ -184,19 +197,25 @@ const ProductDetail = () => {
                     Add to Cart
                   </Button>
                   <Button
-                    variant="outline"
+                    variant="link"
                     size="lg"
                     className="h-12 w-12 p-0"
                     onClick={() => setIsWishlisted(!isWishlisted)}
                   >
-                    <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-red-500 text-red-500' : ''}`} />
+                    <Heart
+                      className={`w-full h-full transition-all duration-300 ${
+                        isWishlisted ? "fill-red-500 text-red-500" : ""
+                      }`}
+                    />
                   </Button>
                 </div>
               </div>
 
               {/* Description */}
               <Card className="p-6 mt-8">
-                <h3 className="font-playfair text-lg font-semibold mb-3">Description</h3>
+                <h3 className="font-playfair text-lg font-semibold mb-3">
+                  Description
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {product.description}
                 </p>
@@ -204,10 +223,15 @@ const ProductDetail = () => {
 
               {/* Features */}
               <Card className="p-6">
-                <h3 className="font-playfair text-lg font-semibold mb-3">Features</h3>
+                <h3 className="font-playfair text-lg font-semibold mb-3">
+                  Features
+                </h3>
                 <ul className="space-y-2">
                   {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-center text-muted-foreground">
+                    <li
+                      key={index}
+                      className="flex items-center text-muted-foreground"
+                    >
                       <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
                       {feature}
                     </li>
@@ -217,14 +241,18 @@ const ProductDetail = () => {
 
               {/* Specifications */}
               <Card className="p-6">
-                <h3 className="font-playfair text-lg font-semibold mb-3">Specifications</h3>
+                <h3 className="font-playfair text-lg font-semibold mb-3">
+                  Specifications
+                </h3>
                 <div className="space-y-3">
-                  {Object.entries(product.specifications).map(([key, value]) => (
-                    <div key={key} className="flex justify-between py-1">
-                      <span className="text-muted-foreground">{key}:</span>
-                      <span className="font-medium">{value}</span>
-                    </div>
-                  ))}
+                  {Object.entries(product.specifications).map(
+                    ([key, value]) => (
+                      <div key={key} className="flex justify-between py-1">
+                        <span className="text-muted-foreground">{key}:</span>
+                        <span className="font-medium">{value}</span>
+                      </div>
+                    )
+                  )}
                 </div>
               </Card>
             </div>

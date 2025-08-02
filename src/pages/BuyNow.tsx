@@ -85,7 +85,7 @@ const BuyNow = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      <main className="pt-20">
+      <main className="py-20">
         <div className="container mx-auto px-4 py-6">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
@@ -215,7 +215,7 @@ const BuyNow = () => {
                   </Card>
 
                   {/* Shipping Method */}
-                  <Card className="p-6">
+                  {/* <Card className="p-6">
                     <h2 className="font-playfair text-xl font-semibold mb-4">
                       Shipping Method
                     </h2>
@@ -252,7 +252,7 @@ const BuyNow = () => {
                         </div>
                       ))}
                     </div>
-                  </Card>
+                  </Card> */}
 
                   {/* Payment Information */}
                   <Card className="p-6">
@@ -388,7 +388,7 @@ const BuyNow = () => {
                       </div>
                       <div className="flex items-center gap-3">
                         <Truck className="w-4 h-4 text-green-600" />
-                        <span>Free returns within 30 days</span>
+                        <span>Free returns within 7 days</span>
                       </div>
                       <div className="flex items-center gap-3">
                         <CreditCard className="w-4 h-4 text-green-600" />

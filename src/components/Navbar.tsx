@@ -33,7 +33,7 @@ const Navbar = () => {
             <span className="font-playfair font-bold text-xl text-primary">
               FleeBy
             </span>
-            {/* <img src="/logo.png" className='w-20' alt="" /> */}
+            {/* <img src="/logo.png" className='w-20' alt="logo" /> */}
           </Link>
 
           {/* Desktop Navigation */}

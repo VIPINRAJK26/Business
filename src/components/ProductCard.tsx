@@ -62,7 +62,7 @@ const ProductCard = ({
           onClick={handleViewProduct}
         >
           <div className="w-full h-full bg-gradient-to-br from-muted/20 to-muted/40 flex items-center justify-center">
-            <img src={image} alt="" />
+            <img src={image} alt="product image" />
           </div>
 
           {/* Badges */}
@@ -82,6 +82,7 @@ const ProductCard = ({
           <Button
             variant="ghost"
             size="icon"
+            
             className={`absolute top-3 right-3 bg-white/90 hover:bg-white transition-all duration-300 ${
               isHovered ? "opacity-100 scale-100" : "opacity-0 scale-75"
             }`}

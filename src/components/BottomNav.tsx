@@ -9,7 +9,6 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 type NavItem = {
   icon: React.ReactNode;
   activeIcon: React.ReactNode;
@@ -65,12 +64,13 @@ export const MobileNavbar = () => {
       <div className="flex justify-around items-center px-2 py-3">
         {navItems.map((item, index) => (
           <button
+            type="button"
             key={item.path}
             onClick={() => {
               setActiveItem(index);
               navigate(item.path); // 👈 Navigate to path
             }}
-            className={`flex flex-col items-center justify-center w-full relative transition-colors duration-200 ${
+            className={`flex flex-col  items-center justify-center w-full relative transition-colors duration-200 ${
               activeItem === index ? "text-primary" : "text-gray-500"
             }`}
           >
