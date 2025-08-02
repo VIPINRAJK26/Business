@@ -52,7 +52,7 @@ const Hero2 = () => {
             return (
               <div
                 key={item.id}
-                className={`flex justify-between text-white bg-gradient-to-r ${fromColor} ${toColor} p-4 rounded-2xl ${
+                className={`flex justify-between text-white bg-gradient-to-r ${fromColor} ${toColor} px-8 py-4 rounded-2xl ${
                   item.id % 2 === 0 ? "flex-row-reverse" : ""
                 }`}
               >
