@@ -65,7 +65,7 @@ const Hero = () => {
 
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="hidden relative min-h-screen md:flex items-center justify-center overflow-hidden">
       {/* Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/20 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)_/_0.1),transparent_50%)]" />

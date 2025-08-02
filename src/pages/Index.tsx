@@ -7,6 +7,7 @@ import { ArrowRight, Star, Truck, Shield, Award, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Hero2 from "@/components/Hero2";
 
 const Index = () => {
   const featuredProducts = [
@@ -125,6 +126,7 @@ const Index = () => {
       <main>
         {/* Hero Section */}
         <Hero />
+        <Hero2 />
 
         {/* Features Section */}
 
