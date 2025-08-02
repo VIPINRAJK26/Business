@@ -135,7 +135,7 @@ const Index = () => {
               <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
                 Featured Collection
               </Badge>
-              <h2 className="font-playfair text-2xl lg:text-5xl font-bold text-primary mb-4">
+              <h2 className="font-playfair text-2xl  lg:text-5xl font-bold text-primary mb-4">
                 Handpicked
                 <span className="text-accent"> Treasures</span>
               </h2>

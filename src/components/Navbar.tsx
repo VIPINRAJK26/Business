@@ -30,9 +30,10 @@ const Navbar = () => {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:shadow-medium transition-all duration-300">
               <ShoppingBag className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-playfair font-bold text-xl text-primary">
-              CraftCorner
-            </span>
+            {/* <span className="font-playfair font-bold text-xl text-primary">
+              FleeBy
+            </span> */}
+            <img src="/logo.png" className='w-20' alt="" />
           </Link>
 
           {/* Desktop Navigation */}

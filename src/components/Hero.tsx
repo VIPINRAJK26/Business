@@ -79,7 +79,7 @@ const Hero = () => {
               <span>Handcrafted with Love</span>
             </div>
 
-            <h1 className="font-playfair text-3xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
+            <h1 className="font-playfair text-3xl lg:text-7xl font-bold text-[#1A1A1A] mb-6 leading-tight">
               Unique <span className="text-accent">Crafts</span>
               <br />
               For Every Home
